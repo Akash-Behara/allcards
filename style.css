@@ -1,0 +1,346 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.card {
+  overflow: visible;
+  width: 380px;
+  height: 500px;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 300ms;
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.9333333333);
+  border-radius: 5px;
+}
+
+.front, .back {
+  background-color: #151515;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.back {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.back::before {
+  position: absolute;
+  content: " ";
+  display: block;
+  width: 160px;
+  height: 160%;
+  background: linear-gradient(90deg, transparent, #ff9966, #ff9966, #ff9966, #ff9966, transparent);
+  animation: rotation_481 5000ms infinite linear;
+}
+
+.back-content {
+  position: absolute;
+  width: 99%;
+  height: 99%;
+  background-color: #151515;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.card:hover .content {
+  transform: rotateY(180deg);
+}
+
+@keyframes rotation_481 {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  0% {
+    transform: rotateZ(360deg);
+  }
+}
+.front {
+  transform: rotateY(180deg);
+  color: white;
+}
+
+.front .front-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+}
+
+.front-content .badge {
+  background-color: rgba(0, 0, 0, 0.3333333333);
+  padding: 2px 10px;
+  border-radius: 10px;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.description {
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5333333333);
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  border-radius: 5px;
+}
+
+.title {
+  font-size: 11px;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title p {
+  width: 50%;
+}
+
+.card-footer {
+  color: rgba(255, 255, 255, 0.5333333333);
+  margin-top: 5px;
+  font-size: 8px;
+}
+
+.front .img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: #ffbb66;
+  position: relative;
+  filter: blur(25px);
+  animation: floating 2600ms infinite linear;
+}
+
+#bottom {
+  background-color: #ff8866;
+  left: 50px;
+  top: 0px;
+  width: 150px;
+  height: 150px;
+  animation-delay: -800ms;
+}
+
+#right {
+  background-color: #ff2233;
+  left: 160px;
+  top: -80px;
+  width: 30px;
+  height: 30px;
+  animation-delay: -1800ms;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+.box {
+  width: 100%;
+  height: 100px;
+  background: #000;
+  text-align: justify;
+  color: white;
+  -webkit-clip-path: var(--path_box_1);
+          clip-path: var(--path_box_1);
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  border-radius: 8px 8px 0 0;
+}
+
+.box div {
+  padding: 5px;
+  font-size: 16px;
+}
+
+/* This is imaginary container which is used to shape/push the text in specific angle */
+.clipped-image {
+  shape-outside: var(--path_cliped_img);
+  -webkit-clip-path: var(--path_cliped_img);
+          clip-path: var(--path_cliped_img);
+}
+
+.New__Card {
+  border: 1px solid lightgray;
+  /* max-height: 570px; */
+  width: 380px;
+  height: 500px;
+  position: relative;
+  background-color: #2b4162;
+  background-image: linear-gradient(315deg, #aaaa44 0%, #2b4162 70%);
+  box-shadow: rgba(0, 0, 0, 0.35) 10px 10px 20px;
+  border-radius: 8px;
+}
+
+.New__Card:hover {
+  transition: ease-in-out 0.2s;
+  scale: 1.01;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px 10px;
+}
+
+.Card__Content {
+  padding: 8px 10px;
+}
+
+.Card__Content_Short_Desc {
+  font-size: 14px;
+}
+
+.box2 {
+  /* width: 400px; */
+  height: 455px;
+  background: #000;
+  text-align: justify;
+  color: white;
+  -webkit-clip-path: var(--path_box_2);
+          clip-path: var(--path_box_2);
+  border-radius: 8px;
+  padding: 8px 4px;
+}
+
+.box2 p {
+  padding: 5px;
+  font-size: 16px;
+}
+
+/* This is imaginary container which is used to shape/push the text in specific angle */
+.clipped-image2 {
+  float: left;
+  width: 100%;
+  height: 100%;
+  shape-outside: polygon(0% 0%, 100% 0%, 0% 70%);
+  -webkit-clip-path: var(--path_cliped_img_2);
+          clip-path: var(--path_cliped_img_2);
+}
+
+.circleInCard {
+  width: var(--moon_size);
+  height: var(--moon_size);
+  border-radius: 50%;
+  background: white;
+  position: absolute;
+  top: 45%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+}
+
+.New__Card {
+  border-radius: 8px;
+}
+.New__Card .Card__Top__Container {
+  flex-grow: 1;
+  background-color: #000;
+  border-radius: 8px 8px 0 0;
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 0% 100%);
+          clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 0% 100%);
+}
+.New__Card .Card__Top__Container .Card__Top__Text__Container {
+  padding: 4px 10px;
+  color: white;
+}
+.New__Card .Card__Top__Container .Card__Top__Text__Container h2 {
+  margin-bottom: 0;
+}
+.New__Card .Card__Top__Container .Card__Top__Text__Container p {
+  color: rgba(255, 255, 255, 0.538);
+}
+.New__Card .Card__Bottom__Container {
+  background-color: #000;
+  flex-grow: 3;
+  -webkit-clip-path: polygon(0% 50%, 100% 0%, 100% 100%, 0% 100%);
+          clip-path: polygon(0% 50%, 100% 0%, 100% 100%, 0% 100%);
+  position: relative;
+  border-radius: 0 0 8px 8px;
+}
+.New__Card .Card__Bottom__Container .Text__Path__Clipper {
+  float: left;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 50%);
+          clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 50%);
+  shape-outside: polygon(0% 0%, 100% 0%, 100% 0%, 0% 50%);
+}
+.New__Card .Card__Bottom__Container .Text {
+  right: 0;
+  bottom: 0;
+  color: white;
+  padding: 5px 10px;
+}
+.New__Card .Circle__Moon {
+  position: absolute;
+  top: 36%;
+  left: 25%;
+  background: white;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  transform: translate(-30%, -40%);
+}
+
+.Generic__Card {
+  width: 380px;
+  height: 500px;
+  box-shadow: rgba(0, 0, 0, 0.35) 10px 10px 20px;
+  border-radius: 8px;
+}
+.Generic__Card .Img__Container img {
+  width: 380px;
+  border-radius: 8px 8px 0 0;
+}
+.Generic__Card .Generic__Card__Content {
+  padding: 5px 10px;
+}
+
+.Generic__Card:hover {
+  transition: ease-in-out 0.2s;
+  scale: 1.01;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px 10px;
+}/*# sourceMappingURL=style.css.map */
