@@ -1,4 +1,9 @@
+
 :root{
+  --path_box_1: polygon(0% 0%, 100% 0%, 100% 50%, 0% 100%);
+  --path_box_2: polygon(0% 50%, 100% 0%, 100% 100%, 0% 100%);
+  --path_cliped_text: polygon(0% 0%, 100% 0%, 100% 0%, 0% 50%);;
+  --moon_size: 100px;
   --card-width:380px;
   --card-height: 500px
 }
@@ -185,31 +190,7 @@ body {
     transform: translateY(0px);
   }
 }
-.box {
-  width: 100%;
-  height: 100px;
-  background: #000;
-  text-align: justify;
-  color: white;
-  -webkit-clip-path: var(--path_box_1);
-          clip-path: var(--path_box_1);
-  position: relative;
-  display: flex;
-  align-items: stretch;
-  border-radius: 8px 8px 0 0;
-}
 
-.box div {
-  padding: 5px;
-  font-size: 16px;
-}
-
-/* This is imaginary container which is used to shape/push the text in specific angle */
-.clipped-image {
-  shape-outside: var(--path_cliped_img);
-  -webkit-clip-path: var(--path_cliped_img);
-          clip-path: var(--path_cliped_img);
-}
 
 .New__Card {
   border: 1px solid lightgray;
@@ -229,51 +210,6 @@ body {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px 10px;
 }
 
-.Card__Content {
-  padding: 8px 10px;
-}
-
-.Card__Content_Short_Desc {
-  font-size: 14px;
-}
-
-.box2 {
-  /* width: 400px; */
-  height: 455px;
-  background: #000;
-  text-align: justify;
-  color: white;
-  -webkit-clip-path: var(--path_box_2);
-          clip-path: var(--path_box_2);
-  border-radius: 8px;
-  padding: 8px 4px;
-}
-
-.box2 p {
-  padding: 5px;
-  font-size: 16px;
-}
-
-/* This is imaginary container which is used to shape/push the text in specific angle */
-.clipped-image2 {
-  float: left;
-  width: 100%;
-  height: 100%;
-  shape-outside: polygon(0% 0%, 100% 0%, 0% 70%);
-  -webkit-clip-path: var(--path_cliped_img_2);
-          clip-path: var(--path_cliped_img_2);
-}
-
-.circleInCard {
-  width: var(--moon_size);
-  height: var(--moon_size);
-  border-radius: 50%;
-  background: white;
-  position: absolute;
-  top: 45%;
-  left: 25%;
-  transform: translate(-50%, -50%);
-}
 
 .New__Card {
   border-radius: 8px;
@@ -282,8 +218,8 @@ body {
   flex-grow: 1;
   background-color: #000;
   border-radius: 8px 8px 0 0;
-  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 0% 100%);
-          clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 0% 100%);
+  -webkit-clip-path: var(--path_box_1);
+          clip-path: var(--path_box_1);
 }
 .New__Card .Card__Top__Container .Card__Top__Text__Container {
   padding: 4px 10px;
@@ -298,8 +234,8 @@ body {
 .New__Card .Card__Bottom__Container {
   background-color: #000;
   flex-grow: 3;
-  -webkit-clip-path: polygon(0% 50%, 100% 0%, 100% 100%, 0% 100%);
-          clip-path: polygon(0% 50%, 100% 0%, 100% 100%, 0% 100%);
+  -webkit-clip-path: var(--path_box_2);
+          clip-path: var(--path_box_2);
   position: relative;
   border-radius: 0 0 8px 8px;
 }
@@ -309,9 +245,9 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 50%);
-          clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 50%);
-  shape-outside: polygon(0% 0%, 100% 0%, 100% 0%, 0% 50%);
+  -webkit-clip-path: var(--path_cliped_text);
+          clip-path: var(--path_cliped_text);
+  shape-outside: var(--path_cliped_text);
 }
 .New__Card .Card__Bottom__Container .Text {
   right: 0;
@@ -324,8 +260,8 @@ body {
   top: 36%;
   left: 25%;
   background: white;
-  height: 100px;
-  width: 100px;
+  height: var(--moon_size);
+  width: var(--moon_size);
   border-radius: 50%;
   transform: translate(-30%, -40%);
 }
